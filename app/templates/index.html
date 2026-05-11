@@ -1,157 +1,178 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Happy Mother's Day</title>
-    <style type="text/css">
-        body {
-        background-color : LightGrey;
-        padding : 10px;
-        word-spacing : 2px;
-        letter-spacing : 1px;
-        line-height : 10px;
-        margin:10px;
-        font-family:"Comic Sans MS",cursive;}
 
-        p {
-        display:inline;
-        align-items : top;
-        padding:10px;
-        text-shadow : 10px 10px 10px LightGrey;
-        margin:5px;
-        padding:10px;
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: LightGrey;
+            padding: 2%;
+            font-family: "Comic Sans MS", cursive;
+            word-spacing: 2px;
+            letter-spacing: 1px;
+            line-height: 1.6;
+        }
+
+        .hero {
+            background-color: Grey;
+            padding: 3%;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            border: 3px outset rgb(25,25,25);
+
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .hero-text {
+            flex: 1;
+            min-width: 280px;
         }
 
         #big {
-        font-size : 70px;}
-
-        .hero {
-        background-color : Grey;
-        padding : 20px;
-        margin : 15px;
-        border-radius : 5px;
-        border: 3px outset rgb(25,25,25);
+            font-size: clamp(2rem, 6vw, 4.5rem);
+            display: block;
+            margin-bottom: 10px;
         }
 
-        img {
-        height : 70px;
-        width : 70x;
-        left: 170px;
-        position:relative;}
+        .subtitle {
+            font-size: clamp(1rem, 2vw, 1.2rem);
+        }
 
-        p[class="noline"] {
-        display : block ;
-        line-height:3px;
-        color:Grey;
-        text-shadow:1px 1px 1px rgb(25,25,25);}
+        .hero img {
+        width: auto;
+        height: auto;
+        max-width: 100%;
+        }
+
+        .body {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            align-items: flex-start;
+            margin: 20px 0;
+        }
+
+        .text-content {
+            flex: 2;
+            min-width: 300px;
+        }
+
+        .noline {
+            display: block;
+            margin-bottom: 12px;
+            color: Grey;
+            text-shadow: 1px 1px 1px rgb(25,25,25);
+            line-height: 1.6;
+        }
 
         .ph {
-        width:300px;
-        height:300px;
-        left: 1000px;
-        bottom: 235px;
-        border-radius:10px;
-        border : 2px solid Grey;
+            flex: 1;
+            width: 100%;
+            max-width: 320px;
+            height: auto;
+            border-radius: 10px;
+            border: 2px solid Grey;
         }
 
         .footer {
-        background-color : Grey;
-        padding : 15px;
-        margin : 10px;
-        border-radius : 5px;
-        border: 3px outset rgb(25,25,25);
-        color:LightGrey;
-        font-style:italic;
+            background-color: Grey;
+            padding: 3%;
+            margin-top: 20px;
+            border-radius: 8px;
+            border: 3px outset rgb(25,25,25);
+            color: LightGrey;
+            font-style: italic;
+            text-align: center;
         }
 
-    @media (max-width: 768px) {
+        .footer h1 {
+            font-size: clamp(1.4rem, 4vw, 2.5rem);
+            margin-bottom: 10px;
+        }
 
-    body {
-        padding: 5px;
-        margin: 5px;
-        line-height: normal;
-        word-spacing: 1px;
-        letter-spacing: 0.5px;
-        font-size: 15px;
-    }
+        .footer h2 {
+            font-size: clamp(1rem, 2vw, 1.5rem);
+        }
 
-    .hero {
-        padding: 20px 15px;
-        margin: 10px;
-        text-align: center;
-    }
+        @media (max-width: 768px) {
+            .hero {
+                text-align: center;
+                justify-content: center;
+            }
 
-    p {
-        display: block;
-        padding: 5px;
-        margin: 5px 0;
-        text-align: center;
-    }
+            .body {
+                flex-direction: column;
+                align-items: center;
+            }
 
-    #big {
-        font-size: 42px;
-        line-height: 1.2;
-    }
+            .text-content {
+                width: 100%;
+            }
 
-    img {
-        position: static;
-        width: 100%;
-        max-width: 280px;
-        height: auto;
-        margin: 20px auto;
-        display: block;
-    }
-
-    .ph {
-        position: static;
-        width: 90%;
-        max-width: 300px;
-        height: auto;
-        margin: 20px auto;
-        display: block;
-        border-radius: 12px;
-    }
-
-    p[class="noline"] {
-        display: block;
-        line-height: 1.5;
-        text-align: center;
-        font-size: 14px;
-    }
-
-    .footer {
-        padding: 15px;
-        margin: 10px;
-        text-align: center;
-        font-size: 14px;
-        line-height: 1.5;
-    }
-
-}
-
-
+            .ph {
+                max-width: 90%;
+            }
+        }
     </style>
 </head>
+
 <body>
+
+    {% load static %}
+
     <div class="hero">
-        {% load static %}
-        <p id="big">Happy Mothers Day</p><p>Thank you for being my first home, my first teacher, and my forever hero </p> <img src="{% static 'hero.png' %}"> </div><hr>
-        <div class="body">
-            <p class="noline">You know you are the best mother in the world . You will think it's just for the sake of writing but its not.</p>
-            <p class="noline">It's not like we do not have arguments or so but who in the world does not have arguments , right?</p>
-            <p class="noline">You are the one because of whom I am this place.</p>
+        <div class="hero-text">
+            <p id="big">Happy Mother's Day</p>
+            <p class="subtitle">
+                Thank you for being my first home, my first teacher,
+                and my forever hero
+            </p>
+        </div>
+
+        <img src="{% static 'hero.png' %}">
+    </div>
+
+    <hr>
+
+    <div class="body">
+
+        <div class="text-content">
+            <p class="noline">You know you are the best mother in the world. You will think it's just for the sake of writing but it's not.</p>
+
+            <p class="noline">It's not like we do not have arguments or so but who in the world does not have arguments, right?</p>
+
+            <p class="noline">You are the one because of whom I am at this place.</p>
+
             <p class="noline">You always cared about me instead of caring about yourself.</p>
+
             <p class="noline">You always put me in the very first place before anyone else.</p>
-            <p class="noline">You were always there for me when i was sick or feeling unwell.</p>
-            <p class="noline">And also I'm sorry for yesterday or for ever when I didn't listen to you.</p>
+
+            <p class="noline">You were always there for me when I was sick or feeling unwell.</p>
+
+            <p class="noline">And also I'm sorry for yesterday or for whenever I didn't listen to you.</p>
+
             <p class="noline">I'm grateful for everything that you have done for me until now.</p>
-            <img class="ph" src="{% static 'photo.png' %}">
         </div>
-        <div class="footer">
-            <h1>Life doesn't come with a manual but a mother.</h1>
-            <h2>Made with love for mom.</h2>
-        </div>
+
+        <img class="ph" src="{% static 'photo.png' %}">
+    </div>
+
+    <div class="footer">
+        <h1>Life doesn't come with a manual but a mother.</h1>
+        <h2>Made with love for mom.</h2>
+    </div>
 
 </body>
 </html>
